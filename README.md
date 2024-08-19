@@ -39,10 +39,15 @@ pip install -r requirements.txt
 
 cd yx_kaolin
 python setup.py develop
+
+cd yx-kaolin-wisp
+pip install -r requirements.txt
+pip install -r requirements_app.txt
+python setup.py develop
 ```
 
 <!-- What's more, [kaolin-wisp](https://kaolin-wisp.readthedocs.io/en/latest/pages/install.html) should be installed. -->
-kaolin-wisp modified by me can be downloaded here: https://drive.google.com/drive/folders/1RvMYtInNbKuP8XBV2_Z4iEpCbDixKxLE?usp=drive_link
+kaolin and kaolin-wisp modified by me can be downloaded here: https://drive.google.com/drive/folders/1RvMYtInNbKuP8XBV2_Z4iEpCbDixKxLE?usp=drive_link
 
 
 ## Data Preparation
@@ -74,6 +79,17 @@ If you find our code or paper useful for your research, please consider citing:
   author={Mao, Yunxuan and Yu, Xuan and Wang, Kai and Wang, Yue and Xiong, Rong and Liao, Yiyi},
   journal={arXiv preprint arXiv:2311.09525},
   year={2023}
+}
+```
+
+```
+@inproceedings{mao2024ngel,
+  title={Ngel-slam: Neural implicit representation-based global consistent low-latency slam system},
+  author={Mao, Yunxuan and Yu, Xuan and Zhang, Zhuqing and Wang, Kai and Wang, Yue and Xiong, Rong and Liao, Yiyi},
+  booktitle={2024 IEEE International Conference on Robotics and Automation (ICRA)},
+  pages={6952--6958},
+  year={2024},
+  organization={IEEE}
 }
 ```
 
