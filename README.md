@@ -25,7 +25,7 @@ cd ..
 catkin_make
 ```
 <!-- See [orb-slam3-ros](https://github.com/thien94/orb_slam3_ros) for more detail. -->
-ORB-SLAM-ROS3 modified by me can be downloaded here: https://drive.google.com/drive/folders/1RvMYtInNbKuP8XBV2_Z4iEpCbDixKxLE?usp=drive_link
+ORB-SLAM-ROS3 modified by me can be downloaded here: [google dirve](https://drive.google.com/drive/folders/1RvMYtInNbKuP8XBV2_Z4iEpCbDixKxLE?usp=drive_link) or [baidu netdisk](https://pan.baidu.com/s/1SUxY7pP_9de5kmw5G_7qYA) (Passward: di2k)
 
 ### Install the environment
 
@@ -47,7 +47,7 @@ python setup.py develop
 ```
 
 <!-- What's more, [kaolin-wisp](https://kaolin-wisp.readthedocs.io/en/latest/pages/install.html) should be installed. -->
-kaolin and kaolin-wisp modified by me can be downloaded here: https://drive.google.com/drive/folders/1RvMYtInNbKuP8XBV2_Z4iEpCbDixKxLE?usp=drive_link
+ORB-SLAM-ROS3 modified by me can be downloaded here: [google dirve](https://drive.google.com/drive/folders/1RvMYtInNbKuP8XBV2_Z4iEpCbDixKxLE?usp=drive_link) or [baidu netdisk](https://pan.baidu.com/s/1SUxY7pP_9de5kmw5G_7qYA) (Passward: di2k)
 
 
 ## Data Preparation
