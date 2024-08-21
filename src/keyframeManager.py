@@ -248,7 +248,7 @@ class KeyframeManager():
             kf_list.append(frame_id)
             
         info['KFlist'] = kf_list
-        LBA_flag, GBA_flag, Loop_flag, optimized_kf, new_kf = self.read_kf_json(info)
+        LBA_flag, GBA_flag, Loop_flag, optimized_kf, new_kf = self.read_info(info)
         
         
         if self.init:
