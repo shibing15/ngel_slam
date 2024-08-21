@@ -37,17 +37,17 @@ pip install torch==1.10.1+cu113 torchvision==0.11.2+cu113 torchaudio==0.10.1 -f 
 
 pip install -r requirements.txt
 
-cd yx_kaolin
+cd third_party/kaolin
 python setup.py develop
 
-cd yx-kaolin-wisp
+cd third_party/kaolin-wisp
 pip install -r requirements.txt
 pip install -r requirements_app.txt
 python setup.py develop
 ```
 
 <!-- What's more, [kaolin-wisp](https://kaolin-wisp.readthedocs.io/en/latest/pages/install.html) should be installed. -->
-ORB-SLAM-ROS3 modified by me can be downloaded here: [google dirve](https://drive.google.com/drive/folders/1RvMYtInNbKuP8XBV2_Z4iEpCbDixKxLE?usp=drive_link) or [baidu netdisk](https://pan.baidu.com/s/1SUxY7pP_9de5kmw5G_7qYA) (Passward: di2k)
+<!-- ORB-SLAM-ROS3 modified by me can be downloaded here: [google dirve](https://drive.google.com/drive/folders/1RvMYtInNbKuP8XBV2_Z4iEpCbDixKxLE?usp=drive_link) or [baidu netdisk](https://pan.baidu.com/s/1SUxY7pP_9de5kmw5G_7qYA) (Passward: di2k) -->
 
 
 ## Data Preparation
