@@ -96,4 +96,4 @@ If you find our code or paper useful for your research, please consider citing:
 For large scale mapping work, you can refer to [NF-Atlas](https://github.com/yuxuan1206/NF-Atlas).
 
 ## Acknowledge
-Thanks for the source code of [orb-slam3-ros](https://github.com/thien94/orb_slam3_ros) and [kaolin-wisp](https://kaolin-wisp.readthedocs.io/en/latest/pages/install.html).
+Thanks for the source code of [orb-slam3-ros](https://github.com/thien94/orb_slam3_ros), [kaolin](https://kaolin.readthedocs.io/en/latest/) and [kaolin-wisp](https://kaolin-wisp.readthedocs.io/en/latest/pages/install.html).
