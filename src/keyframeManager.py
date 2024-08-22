@@ -85,7 +85,7 @@ class KeyframeManager():
         self.init = True
         self.in_loop = False
 
-        self.self.new_volume_flag = ssnerf.shared_new_volume_flag
+        self.new_volume_flag = ssnerf.shared_new_volume_flag
         self.end_local_map_flag = ssnerf.shared_end_local_map_flag
         self.local_volume_init = ssnerf.shared_local_volume_init
         self.local_mapping_flag = ssnerf.shared_local_mapping_flag
