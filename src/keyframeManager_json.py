@@ -435,9 +435,9 @@ class KeyframeManager():
                         while True:
                             if not self.init_mapping.value:
                                 if self.verbose:
-                                    # print(Fore.MAGENTA)
-                                    print(f"\033[95mGlobal initializing done!\033[0m")
-                                    # print(Style.RESET_ALL)
+                                    print(Fore.MAGENTA)
+                                    print(f"Global initializing done!")
+                                    print(Style.RESET_ALL)
                                 break
                         self.init = False
                         
@@ -446,9 +446,9 @@ class KeyframeManager():
                     while True:
                         if not self.local_volume_init.value:
                             if self.verbose:
-                                # print(Fore.MAGENTA)
-                                print(f"\033[95mLocal initializing done!\033[0m")
-                                # print(Style.RESET_ALL)
+                                print(Fore.MAGENTA)
+                                print(f"Local initializing done!")
+                                print(Style.RESET_ALL)
                             break
 
             

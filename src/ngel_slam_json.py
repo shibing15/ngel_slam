@@ -12,13 +12,14 @@ import torch.multiprocessing as mp
 from src.models.decoder import OCCDecoder, RGBDecoder
 from src.models.renderer import Renderer
 from src.utils.visualizer import Visualizer
-from src.keyframeManager import KeyframeManager
+from src.keyframeManager_json import KeyframeManager
 from src.mapper import Mapper
+from src.global_mapper import Global_Mapper
 from src.utils.datasets import get_dataset
 
 LOSS_TYPE = ['depth_occ', 'rgb']
 
-class SSNeRF():
+class NGEL_SLAM():
 
     def __init__(self, cfg, args):
 
@@ -51,8 +52,8 @@ class SSNeRF():
         self.bbox = cfg['mapping']['bound']
         origin = (np.array(self.bbox)[:,1] + np.array(self.bbox)[:,0]) / 2
         scale = np.ceil((np.array(self.bbox)[:,1] - np.array(self.bbox)[:,0]).max()/2)
-        self.origin = torch.tensor(origin, dtype=torch.float32).to(self.device)
-        self.scale = torch.tensor(scale, dtype=torch.float32).to(self.device)
+        self.origin = torch.tensor(origin, dtype=torch.float32)
+        self.scale = torch.tensor(scale, dtype=torch.float32)
 
         # sparse volume config
         self.map_length = cfg['map_length']
@@ -118,6 +119,8 @@ class SSNeRF():
         # images for mapper
         self.shared_local_optimized_keyframes = manager.list()
         self.shared_global_optimized_keyframes = manager.list()
+        # keyframes
+        self.shared_keyframe_rays = manager.dict()
 
         self.share_color_images = manager.dict()
         self.share_depth_images = manager.dict()
@@ -133,6 +136,8 @@ class SSNeRF():
         self.keyframeManager = KeyframeManager(cfg, args, self)
 
         self.local_mapper = Mapper(cfg, args, self)
+
+        self.global_mapper = Global_Mapper(cfg, args, self)
 
 
     def update_cam(self):
@@ -173,6 +178,10 @@ class SSNeRF():
 
         self.local_mapper.run()
 
+    def global_mapping(self, rank):
+
+        self.global_mapper.run()
+
     def run(self):
         processes = []
         for rank in range(2):
@@ -181,6 +190,10 @@ class SSNeRF():
 
             if rank == 1:
                 p = mp.Process(target=self.local_mapping, args=(rank, ))
+
+            if rank == 2:
+                p = mp.Process(target=self.global_mapping, args=(rank, ))
+
 
             p.start()
             processes.append(p)

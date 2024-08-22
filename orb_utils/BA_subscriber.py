@@ -86,5 +86,5 @@ def listener(save_path):
     rospy.spin()
 
 if __name__ == '__main__':
-    save_path = 'ningbo2_json'
+    save_path = 'keyframes'
     listener(save_path)

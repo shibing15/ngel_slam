@@ -57,9 +57,12 @@ You should put your data in `data` folder follow [NICE-SLAM](https://github.com/
 ```
 python write_bag.py --input_folder '{PATH_TO_INPUT_FOLDER}' --output '{PATH_TO_ROSBAG}' --frame_id 'FRAME_ID_TO_DATA'
 ```
-You should change the intrinsics manually in `write_bag.py`.
+You should change the intrinsics manually in `orb_utils/write_bag.py`.
 
 ## Run
+
+### ROS Communication
+This version is for those who can run ORB and NGEL on the same device and at the same time.
 
 You should first start the ORB-SLAM3-ROS, and then using code below
 
@@ -67,6 +70,13 @@ You should first start the ORB-SLAM3-ROS, and then using code below
 python main.py --config '{PATH_TO_CONFIG}'  --input_folder '{PATH_TO_INPUT_FOLDER}' --output '{PATH_TO_OUTPUT}' 
 ```
 
+### NGEL with JSON frame infos
+This version is for those who cannot run ORB and NGEL at the same time. 
+
+You should first start the ORB-SLAM3-ROS and the `orb_utils/BA_subscriber.py` to save the keyframe information for every timestamps (You should change the save path manually in the script to `{PATH_TO_INPUT_FOLDER}/keyframes`).
+```
+python main_json.py --config '{PATH_TO_CONFIG}'  --input_folder '{PATH_TO_INPUT_FOLDER}' --output '{PATH_TO_OUTPUT}' 
+```
 
 
 ## Citation
