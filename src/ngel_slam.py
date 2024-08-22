@@ -133,7 +133,7 @@ class NGEL_SLAM():
         # self.rgb_decoder.share_memory()
         
         
-
+        self.keyframeManager = KeyframeManager(self.cfg, self.args, self)
         
 
         self.local_mapper = Mapper(cfg, args, self)
@@ -174,7 +174,7 @@ class NGEL_SLAM():
     def tracking(self, rank):
         rospy.init_node('kf_listener', anonymous=True)
 
-        KeyframeManager(self.cfg, self.args, self)
+        self.keyframeManager.init()
 
         rospy.spin()
 

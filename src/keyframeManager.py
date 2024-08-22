@@ -103,6 +103,8 @@ class KeyframeManager():
 
         self.manager = Manager()
 
+    def init(self):
+
         self.kf_sub = rospy.Subscriber("/orb_slam3/BA_info", BA_info, self.callback)
 
     
