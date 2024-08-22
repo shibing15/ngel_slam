@@ -287,7 +287,7 @@ class OctreeGrid(BLASGrid):
             # self.features.append(nn.Parameter(fts).cuda())
             self.features.append(fts.cuda())
         
-        self.parents_dual = spc_ops.unbatched_make_parents(self.points_dual, self.pyramid_dual)
+        self.parents_dual = spc_ops.unbatched_make_dual(self.points_dual, self.pyramid_dual)
         
         log.info(f"Pyramid:{self.blas.pyramid[0]}")
         log.info(f"Pyramid Dual: {self.pyramid_dual[0]}")
@@ -381,7 +381,7 @@ class OctreeGrid(BLASGrid):
         self.trinkets = trinkets
         self.parents = parents
         self.blas = new_blas
-        self.parents_dual = spc_ops.unbatched_make_parents(points_dual, pyramid_dual)
+        self.parents_dual = spc_ops.unbatched_make_dual(points_dual, pyramid_dual)
         # log.info(f"Pyramid:{self.blas.pyramid[0]}")
         # log.info(f"Pyramid Dual: {self.pyramid_dual[0]}")
         etime = time.time()
